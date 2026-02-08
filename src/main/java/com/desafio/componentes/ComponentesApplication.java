@@ -20,11 +20,8 @@ public class ComponentesApplication implements CommandLineRunner
 	@Autowired
 	private ShippingService shippingService;
 
-	@Autowired
-	private Order order;
-
 	public static void main(String[] args) 
-        {
+    {
 		SpringApplication.run(ComponentesApplication.class, args);
 	}
 
@@ -36,7 +33,7 @@ public class ComponentesApplication implements CommandLineRunner
 		int code = scan.nextInt();
 		double basic = scan.nextDouble();
 		double discount = scan.nextDouble();
-		order = new Order(code, basic, discount);
+		Order order = new Order(code, basic, discount);
 		System.out.println();
         System.out.println("Pedido código " + order.getCode());
 		System.out.println("Valor total: R$ " + 
